@@ -16,7 +16,7 @@ if (preg_match_all($regex_link, $html, $links)) {   //generate article link from
         preg_match($regex_tit2, $title1[0], $title2);  //generate title form content html
         $rss.= '<item><title>'.$title2[0].'</title><link><![CDATA['.$link. ']]></link><description><![CDATA['.$article[0].']]></description></item>'; //output title, link, article as an rss item
     }
-    echo $rss;//调试用
+    //echo $rss;//调试用
     file_put_contents('zhihu.xml',$header.$rss.$footer);  // output all rss items to xml file
 }
 ?>
